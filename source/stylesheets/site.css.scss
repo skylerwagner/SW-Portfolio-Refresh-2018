@@ -1,0 +1,214 @@
+/* @override 
+	http://urocyon.local:4567/stylesheets/site.css */
+
+$palette-1: #F1F1F1;
+$palette-2: #9B9B9B;
+$palette-3: #FFCB23;
+$palette-black: #242424;
+$palette-white: #FFFFFF;
+
+body {
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+.section-grey {
+background: #F1F1F1;
+margin: 0 0 0 10px;
+position: static;
+}
+
+.section-white {
+background: #FFFFFF;
+}
+
+.intro-text {
+font-family: hoeflertext-regular;
+font-size: 48px;
+color: #ffffff;
+line-height: 98px;
+background-color: #9B9B9B;
+padding-top: 10px;
+	padding-left: 10px;
+padding-bottom: 5px;
+}
+
+.intro-text-mobile {
+font-family: hoeflertext-regular;
+font-size: 36px;
+color: #ffffff;
+line-height: 55px;
+}
+
+.cta-lv1-selected {
+font-family: lato-medium;
+font-size: 36px;
+color: #ffffff;
+background-color: #FFCB23;
+padding: 10px 60px 20px 20px;
+text-decoration: none;
+margin-bottom: 20px;
+}
+
+.cta-lv1-unselected {
+font-family: lato-light;
+font-size: 36px;
+color: #9b9b9b;
+}
+
+.case-study-title {
+font-family: lato-light;
+font-size: 36px;
+color: #ffffff;
+line-height: 48px;
+}
+
+.cta-lv1-selected-mobile {
+font-family: lato-medium;
+font-size: 24px;
+color: #ffffff;
+}
+
+.cta-lv1-unselected-mobile {
+font-family: lato-light;
+font-size: 24px;
+color: #9b9b9b;
+}
+
+.body-text-intro {
+font-family: lato-medium;
+font-size: 24px;
+color: #242424;
+line-height: 30px;
+}
+
+.individual-project-line-title {
+font-family: lato-medium;
+font-size: 24px;
+color: #242424;
+}
+
+.case-study-title-mobile {
+font-family: lato-light;
+font-size: 24px;
+color: #242424;
+line-height: 36px;
+}
+
+.cta-lv2 {
+font-family: lato-regular;
+font-size: 20px;
+color: #9b9b9b;
+}
+
+.cta-lv2-selected {
+font-family: lato-medium;
+font-size: 20px;
+color: #ffffff;
+}
+
+.filter-item-selected {
+font-family: lato-medium;
+font-size: 20px;
+color: #ffffff;
+}
+
+.filter-item-unselected {
+font-family: lato-regular;
+font-size: 20px;
+color: #9b9b9b;
+}
+
+.body-text-article {
+font-family: lato-light;
+font-size: 18px;
+color: #242424;
+line-height: 26px;
+}
+
+.body-text-article strong {
+font-family: lato-medium;
+}
+
+.body-text-intro {
+font-family: lato-medium;
+font-size: 24px;
+color: #242424;
+line-height: 30px;
+}
+
+.body-text-intro-mobile {
+font-family: lato-medium;
+font-size: 18px;
+color: #242424;
+line-height: 26px;
+}
+
+.individual-project-line-subhead {
+font-family: lato-hairline;
+font-size: 18px;
+color: #242424;
+}
+
+.body-text-article-mobile {
+font-family: lato-light;
+font-size: 14px;
+color: #242424;
+line-height: 20px;
+}
+
+.body-text-article-bold-mobile {
+font-family: lato-medium;
+font-size: 14px;
+color: #242424;
+line-height: 20px;
+}
+
+.selected-filter {
+font-family: lato-italic;
+font-size: 14px;
+color: #242424;
+}
+
+.animation-hint-text-onsolid {
+font-family: lato-light;
+font-size: 12px;
+color: #3b3b3b;
+}
+
+.animation-hint-text-onwhite {
+font-family: lato-regular;
+font-size: 12px;
+color: #3b3b3b;
+}
+
+.individual-project-line-hashtag {
+font-family: lato-regular;
+font-size: 12px;
+color: #242424;
+}
+
+.case-study-hashtag-mobile {
+font-family: lato-regular;
+font-size: 12px;
+color: #242424;
+}
+
+.case-study-hashtag {
+font-family: lato-medium;
+font-size: 12px;
+color: #ffffff;
+}
+
+.skylermadethis-left-align {
+font-family: lato-regular;
+font-size: 12px;
+color: #3b3b3b;
+}
+
+.skylermadethis-right-align {
+font-family: lato-regular;
+font-size: 12px;
+color: #3b3b3b;
+}

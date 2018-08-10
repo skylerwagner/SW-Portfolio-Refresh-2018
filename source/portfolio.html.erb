@@ -1,0 +1,36 @@
+---
+title: Portfolio
+---
+<section id="toggle-buttons" class="section-grey">
+      <a href="/.." id="read-bio" class="cta-lv1-selected">Read Bio</a>
+      <a href="/portfolio/" id="view-portfolio" class="cta-lv1-unselected">View Portfolio</a>
+</section>
+<section id="case-studies" class="section-white">
+ <ul>
+	<% sub_pages('casestudy').each do |study| %>
+		<li><%= link_to study.data.title, study.url %>
+			<ul>
+				<% study.data.category.each do |cat| %>
+				<li>#<%= cat %></li>	
+				<% end %>
+			</ul>
+		</li>
+	<% end %>
+</ul>
+</section>
+<section id="projects">
+<ul>
+	<% sub_pages('project').each do |resource| %>
+		<li><%= link_to resource.data.title, resource.url %>
+			<span><%= resource.data.description %></span>
+			<ul>
+				<% resource.data.category.each do |cat| %>
+				<li>#<%= cat %></li>	
+				<% end %>
+			</ul>
+		</li>
+	<% end %>
+</ul>
+</section>
+<section id="endpage-buttons" class="section-white">
+</section>
