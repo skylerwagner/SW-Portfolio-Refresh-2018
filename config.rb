@@ -64,5 +64,4 @@ helpers do
 		    resource.path.start_with?(dir)
 		end
 	end
-
 end
