@@ -13,6 +13,7 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 page "/project/*", :layout => "project-detail"
+page "/casestudy/*", :layout => "project-detail"
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
