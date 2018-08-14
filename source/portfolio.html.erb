@@ -7,7 +7,7 @@ title: Portfolio
 </section>
 <section id="case-studies" class="section-white">
  <ul>
-	<% sub_pages('./casestudy').each do |study| %>
+	<% sub_pages('casestudy').each do |study| %>
 		<li><%= link_to study.data.title, study.url %>
 			<ul>
 				<% study.data.category.each do |cat| %>
@@ -20,7 +20,7 @@ title: Portfolio
 </section>
 <section id="projects">
 <ul>
-	<% sub_pages('./project').each do |resource| %>
+	<% sub_pages('project').each do |resource| %>
 		<li><%= link_to resource.data.title, resource.url %>
 			<span><%= resource.data.description %></span>
 			<ul>
