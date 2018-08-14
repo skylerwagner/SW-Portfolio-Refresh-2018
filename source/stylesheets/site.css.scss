@@ -1,0 +1,29 @@
+
+#explain-link {
+  float: right;
+  display: block;
+}
+
+div#sundial-wrapper {
+  padding: 162px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  //width: 100%;
+  //flex-wrap: nowrap;
+  align-items: center;
+  //justify-content: space-around;
+}
+
+div.sundial {
+  //border: 1px solid green;
+  //padding: 96px;
+  min-width: 625px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+div.sundial svg {
+
+}

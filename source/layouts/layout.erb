@@ -12,14 +12,15 @@
   </head>
   <body>
 	  <section id="primary-header" class="section-grey">
-	  <a class="animation-hint-text-onsolid" href="#explain">Explain please?</a>
-	  <div class="animation-hint-text">
-	  	<%= partial "explainplease" %>
-	  </div>
-	  <div id="sundial-wrapper">
-		  <%= partial "sundial" %>
-	  </div>
-	  <span class="intro-text">Skyler Wagner lorem integer erat a ante, cenenatis dapibus posuere velit aliquet.</span> 
+	    <a id="explain-link" class="animation-hint-text-onsolid" href="#explain">Explain please?</a>
+	    <div class="animation-hint-text">
+	    	<%= partial "explainplease" %>
+	    </div>
+<!--      <div id="sundial-wrapper"  style="display: flex; flex-direction: row; overflow: hidden; width: 100%; flex-wrap: nowrap; align-items: center; justify-content:  space-around">-->
+      <div id="sundial-wrapper">
+        <%= partial "sundial" %>
+      </div>
+      <span class="intro-text">Skyler Wagner lorem integer erat a ante, cenenatis dapibus posuere velit aliquet.</span>
 	  </section>
 		<%= yield %>
   </body>
