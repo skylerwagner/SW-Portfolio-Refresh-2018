@@ -23,7 +23,13 @@ title: Portfolio
 	Projects
 <div class="filters">
 	Filter: <strong>All Projects</strong>
-	<!This should provide a list of unique categories as pulled from the YAML frontmatter on each individual case study and project >
+	<!This should provide a list of unique categories as pulled from the YAML frontmatter on each individual case study and project. code below is just to be used during development for CSS skinning >
+	<ul>
+		<li><a class="selected-filter" href="#">All Projects</a></li>
+		<li><a class="unselected-filter" href="#">Transpose</a></li>
+		<li><a class="unselected-filter" href="#">Golden Frog</a></li>
+		<li><a class="unselected-filter" href="#">Add'l category</a></li>
+		<li><a class="unselected-filter" href="#">Etc</a></li>
 </div>
 <ul>
 	<% sub_pages('project').each do |resource| %>
