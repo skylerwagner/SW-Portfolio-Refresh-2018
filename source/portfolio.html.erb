@@ -6,6 +6,7 @@ title: Portfolio
       <a href="/portfolio/" id="view-portfolio" class="cta-lv1-unselected">View Portfolio</a>
 </section>
 <section id="case-studies" class="section-white">
+	Case Studies
  <ul>
 	<% sub_pages('casestudy').each do |study| %>
 		<li><%= link_to study.data.title, study.url %>
@@ -19,6 +20,11 @@ title: Portfolio
 </ul>
 </section>
 <section id="projects">
+	Projects
+<div class="filters">
+	Filter: <strong>All Projects</strong>
+	<!This should provide a list of unique categories as pulled from the YAML frontmatter on each individual case study and project >
+</div>
 <ul>
 	<% sub_pages('project').each do |resource| %>
 		<li><%= link_to resource.data.title, resource.url %>
