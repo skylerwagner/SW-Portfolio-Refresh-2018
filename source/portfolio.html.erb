@@ -1,52 +1,64 @@
 ---
 title: Portfolio
 ---
-<section id="toggle-buttons" class="section-grey">
+<section id="toggle-buttons" class="section-grey color6-bg">
   <a href="/.." id="read-bio" class="color2-fg color3-bg cta-lv1-unselected">Read Bio</a>
   <a href="/portfolio/" id="view-portfolio" class="color3-fg color5-bg toggle-button-selected cta-lv1-selected">View Portfolio</a>
 </section>
 <section id="case-studies" class="section-white">
-	Case Studies
- <ul>
-	<% sub_pages('casestudy').each do |study| %>
-		<li><%= link_to study.data.title, study.url %>
-			<ul>
-				<% study.data.category.each do |cat| %>
-				<li>#<%= cat %></li>	
-				<% end %>
-			</ul>
-		</li>
-	<% end %>
-</ul>
+  <span class="project-list-title color2-fg">Case Studies</span>
+  <ul class="case-study-list">
+    <% sub_pages('casestudy').each do |study| %>
+      <li class="case-study-summary">
+        <span class="case-study-title-wrapper color2-bg color3-fg">
+          <%= link_to study.data.title, study.url %>
+<!--          <span class="case-study-title"><%#= study.data.title %></span>-->
+          <ul>
+            <% study.data.category.each do |cat| %>
+              <li class="color3-fg">#<%= cat %></li>
+            <% end %>
+          </ul>
+        </span>
+      </li>
+    <% end %>
+  </ul>
 </section>
 <section id="projects">
-	Projects
-<div class="filters">
-	Filter: <strong>All Projects</strong>
-	<!This should provide a list of unique categories as pulled from the YAML frontmatter on each individual case study and project. code below is just to be used during development for CSS skinning >
-	<ul>
-		<li><a class="selected-filter" href="#">All Projects</a></li>
-		<li><a class="unselected-filter" href="#">Transpose</a></li>
-		<li><a class="unselected-filter" href="#">Golden Frog</a></li>
-		<li><a class="unselected-filter" href="#">Add'l category</a></li>
-		<li><a class="unselected-filter" href="#">Etc</a></li>
-</div>
-<ul>
-	<% sub_pages('project').each do |resource| %>
-		<li><%= link_to resource.data.title, resource.url %>
-			<span><%= resource.data.description %></span>
-			<ul>
-				<% resource.data.category.each do |cat| %>
-				<li>#<%= cat %></li>	
-				<% end %>
-			</ul>
-		</li>
-	<% end %>
-</ul>
+  <div class="project-list-container">
+    <span class="project-list-title color2-fg">Projects</span>
+    <ul class="project-list">
+      <% sub_pages('project').each do |resource| %>
+        <li class="project-summary color6-bg color7-fg">
+          <span class="project-title-wrapper ">
+            <%= link_to resource.data.title, resource.url %>
+            <div class="project-description"><%= resource.data.description %></div>
+            <ul>
+              <% resource.data.category.each do |cat| %>
+                <li>#<%= cat %></li>
+              <% end %>
+            </ul>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="filters-container">
+    <span class="project-list-title color2-fg">Filter</span>
+    <!--      Filter: <strong>All Projects</strong>-->
+    <!This should provide a list of unique categories as pulled from the YAML frontmatter on each individual case study and project. code below is just to be used during development for CSS skinning >
+    <ul class="button-list">
+      <li class="color2-border color2-bg"><a class="selected-filter color3-fg" href="#">All Projects</a></li>
+      <li class="color2-border"><a class="unselected-filter color2-fg" href="#">Transpose</a></li>
+      <li class="color2-border"><a class="unselected-filter color2-fg" href="#">Golden Frog</a></li>
+      <li class="color2-border"><a class="unselected-filter color2-fg" href="#">Add'l category</a></li>
+      <li class="color2-border"><a class="unselected-filter color2-fg" href="#">Etc</a></li>
+    </ul>
+  </div>
 </section>
-<section id="endpage-buttons" class="section-white">
-	<ul>
-		<li><a href="">View Bio and Resume</a></li>
-		<li><a href="">Contact Skyler</a></li>
-	</ul>
+<section id="endpage-buttons" class="section-white color3-bg">
+  <ul class="button-list">
+    <!--    <li class="color2-border"><a href="" class="color2-fg">Download Resume as a PDF</a></li>-->
+    <li class="color2-border"><a href="" class="color2-fg">View Bio and Resume</a></li>
+    <li class="color2-border"><a href="" class="color2-fg">Contact Skyler</a></li>
+  </ul>
 </section>
