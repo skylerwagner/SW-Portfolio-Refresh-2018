@@ -11,6 +11,20 @@
     <%= javascript_include_tag "site" %>
   </head>
   <body>
+    <a href="/portfolio/">Close</a>
+    <h1><%= current_page.data.title %></h1>
+    <ul class="categories">
+    <% current_page.data.category.each do |cat| %>
+        <li>#<%= cat %></li>  
+        <% end %>
+    </ul>
     <%= yield %>
+    <section id="endpage-buttons" class="section-white">
+      <ul>
+        <li><a href="">View Resume and CV</a></li>
+        <li><a href="">Contact Skyler</a></li>
+</ul>
+</section>
+  <span class="skylermadethis">#skylermadethis</span>
   </body>
 </html>
