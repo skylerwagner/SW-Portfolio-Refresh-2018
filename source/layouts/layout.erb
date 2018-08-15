@@ -5,6 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title << " ↫ Skyler Wagner" || "Skyler Wagner" %></title>
     <%= stylesheet_link_tag "site" %>
@@ -12,17 +15,23 @@
   </head>
   <body>
 	  <section id="primary-header" class="section-grey">
-	    <a id="explain-link" class="animation-hint-text-onsolid" href="#explain">Explain please?</a>
-	    <div class="animation-hint-text">
-	    	<%= partial "explainplease" %>
-	    </div>
-<!--      <div id="sundial-wrapper"  style="display: flex; flex-direction: row; overflow: hidden; width: 100%; flex-wrap: nowrap; align-items: center; justify-content:  space-around">-->
-      <div id="sundial-wrapper">
-        <%= partial "sundial" %>
+			<div id="explain-wrapper" >
+				<a id="explain-link" class="animation-hint-text-onsolid color1-fg" href="#explain">Explain, please?</a>
+				<div class="animation-hint-text">
+					<%= partial "explainplease" %>
+				</div>
+			</div>
+			<!--      <div id="sundial-wrapper"  style="display: flex; flex-direction: row; overflow: hidden; width: 100%; flex-wrap: nowrap; align-items: center; justify-content:  space-around">-->
+			<div id="sundial-wrapper">
+				<%= partial "sundial" %>
       </div>
-      <span class="intro-text">Skyler Wagner lorem integer erat a ante, cenenatis dapibus posuere velit aliquet.</span>
+      <div class="intro-text-wrapper">
+        <span class="intro-text color3-fg color2-bg">Skyler Wagner lorem integer erat a ante, cenenatis dapibus posuere velit aliquet.</span>
+      </div>
 	  </section>
 		<%= yield %>
-    <span class="skylermadethis">#skylermadethis</span>
+    <div class="skylermadethis-wrapper">
+      <a class="skylermadethis  color1-fg" href="#skylermadethis">#Skylermadethis </a>
+    </div>
   </body>
 </html>
