@@ -2,44 +2,40 @@
  site
  ******************************************************************************/
 
-.color1-fg {
+.palette-static-fg {
   color: #3b3b3b
 }
 
-.color2-bg {
+.palette-tone1-bg {
   background-color: #9b9b9b;
 }
 
-.color2-fg {
+.palette-tone1-fg {
   color: #9b9b9b !important;
 }
 
-.color2-border {
+.palette-tone1-border {
   border-color: #9b9b9b !important;
 }
 
-.color3-fg {
-  color: #ffffff !important;
-}
-
-.color3-bg {
-  background-color: #ffffff
-}
-
-.color4-fg {
-  color: #242424;
-}
-
-.color5-bg {
-  background-color: #ffcb23;
-}
-
-.color6-bg {
+.palette-tone2-bg {
   background-color: #f1f1f1;
 }
 
-.color7-fg {
+.palette-highlight-bg {
+  background-color: #ffcb23;
+}
+
+.palette-black-fg {
   color: #242424;
+}
+
+.palette-white-fg {
+  color: #ffffff !important;
+}
+
+.palette-white-bg {
+  background-color: #ffffff
 }
 
 body {

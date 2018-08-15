@@ -15,9 +15,9 @@
     <%= javascript_include_tag "site" %>
   </head>
   <body>
-	  <section id="primary-header" class="section-grey color6-bg">
+	  <section id="primary-header" class="section-grey palette-tone2-bg">
 			<div id="explain-wrapper" >
-				<a id="explain-link" class="animation-hint-text-onsolid color1-fg" href="#explain">Explain, please?</a>
+				<a id="explain-link" class="animation-hint-text-onsolid palette-static-fg" href="#explain">Explain, please?</a>
 				<div class="animation-hint-text">
 					<%= partial "explainplease" %>
 				</div>
@@ -27,12 +27,12 @@
 				<%= partial "sundial" %>
       </div>
       <div class="intro-text-wrapper">
-        <span class="intro-text color3-fg color2-bg">Skyler Wagner lorem integer erat a ante, cenenatis dapibus posuere velit aliquet.</span>
+        <span class="intro-text palette-white-fg palette-tone1-bg">Skyler Wagner lorem integer erat a ante, cenenatis dapibus posuere velit aliquet.</span>
       </div>
 	  </section>
 		<%= yield %>
-    <div class="skylermadethis-wrapper color3-bg">
-      <a class="skylermadethis  color1-fg" href="#skylermadethis">#Skylermadethis </a>
+    <div class="skylermadethis-wrapper palette-white-bg">
+      <a class="skylermadethis  palette-static-fg" href="#skylermadethis">#Skylermadethis </a>
     </div>
   </body>
 </html>
