@@ -13,7 +13,9 @@
     <title><%= current_page.data.title << " ↫ Skyler Wagner" || "Skyler Wagner" %></title>
 		<%= stylesheet_link_tag "site" %>
 		<%#= stylesheet_link_tag "material-design-animation" %>
-    <%= javascript_include_tag "site" %>
+		<%= javascript_include_tag "site" %>
+		<%= javascript_include_tag "drag_indicator_animation" %>
+		<%= javascript_include_tag "color_theme_manager" %>
   </head>
   <body class="palette-white-bg site-width">
 	  <section id="primary-header" class="section-grey palette-tone2-bg">
