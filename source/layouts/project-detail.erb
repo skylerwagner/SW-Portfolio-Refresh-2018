@@ -5,26 +5,74 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!-- TODO serve font locally -->
+
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "Middleman" %></title>
     <%= stylesheet_link_tag "site" %>
+    <%= stylesheet_link_tag "project-detail" %>
     <%= javascript_include_tag "site" %>
   </head>
-  <body>
-    <a href="/portfolio/">Close</a>
-    <h1><%= current_page.data.title %></h1>
-    <ul class="categories">
-    <% current_page.data.category.each do |cat| %>
-        <li>#<%= cat %></li>  
-        <% end %>
-    </ul>
-    <%= yield %>
-    <section id="endpage-buttons" class="section-white">
-      <ul>
-        <li><a href="">View Resume and CV</a></li>
-        <li><a href="">Contact Skyler</a></li>
-</ul>
-</section>
-  <span class="skylermadethis">#skylermadethis</span>
+  <body class="palette-white-bg site-width">
+    <section id="project-detail">
+
+      <div class="palette-tone2-border">
+        <div class="palette-tone1-30pct-border">
+          <div class="project-detail-container palette-tone1-border">
+
+            <div class="project-detail-content content-width">
+
+              <div class="project-close-btn-wrapper palette-tone1-30pct-border">
+                <div class="project-close-btn palette-tone1-border palette-white-bg">
+                  <a href="/portfolio/" class="palette-tone1-fg">⇽ Close</a>
+                </div>
+              </div>
+
+              <div class="project-detail-title-shape">
+                <%= partial "casestudy_circle" %>
+              </div>
+
+              <div class="project-detail-title content-width">
+                <span class="intro-text palette-white-fg palette-tone1-bg">
+                  <%= current_page.data.title %>
+                  Skyler Wagner lorem integer erat a ante, cenenatis dapibus posuere velit aliquet.
+                </span>
+              </div>
+
+              <ul class="project-detail-categories">
+                <% current_page.data.category.each do |cat| %>
+                  <li class="palette-tone1-fg">#<%= cat %></li>
+                <% end %>
+              </ul>
+              <div class="palette-black-fg">
+                <%= yield %>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-separator palette-tone2-bg"></section>
+    <section class="section-separator palette-white-bg"></section>
+    <div class="palette-tone2-bg">
+      <section id="endpage-buttons" class="section-white palette-white-bg">
+        <div class="content-width">
+          <ul class="button-list content-half-width">
+            <!--    <li class="color2-border"><a href="" class="color2-fg">Download Resume as a PDF</a></li>-->
+            <li class="palette-tone1-border"><a href="" class="palette-tone1-fg">View Bio and Resume</a></li>
+            <li class="palette-tone1-border"><a href="" class="palette-tone1-fg">Contact Skyler</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div class="palette-tone2-bg">
+      <div class="skylermadethis-wrapper palette-white-bg">
+        <a class="skylermadethis  palette-static-fg" href="#skylermadethis">#Skylermadethis </a>
+      </div>
+    </div>
   </body>
 </html>
