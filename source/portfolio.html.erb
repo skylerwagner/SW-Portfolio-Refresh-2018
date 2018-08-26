@@ -3,7 +3,7 @@ title: Portfolio
 ---
 <section id="toggle-buttons" class="section-grey palette-tone2-bg">
 
-  <div class="content-width toggle-button-container">
+
 <!--  <span class="toggle-button clickable palette-tone1-fg palette-white-bg cta-lv1-unselected">-->
 <!--    <input class="toggle" type="checkbox" onclick="setTimeout(()=>window.location.href='/..',750)"/>-->
 <!--    <div class="anim"></div>-->
@@ -14,8 +14,11 @@ title: Portfolio
 <!--    <div class="anim"></div>-->
 <!--    <span>View Portfolio</span>-->
 <!--  </span>-->
-  <a href="/.." id="read-bio" class="toggle-button palette-tone1-fg palette-white-bg cta-lv1-unselected">Read Bio</a>
-  <a href="/portfolio/" id="view-portfolio" class="toggle-button palette-white-fg palette-highlight-bg toggle-button-selected cta-lv1-selected">View Portfolio</a>
+  <div class="content-width">
+    <div class="content-half-width toggle-button-container">
+      <a href="/.." id="read-bio" class="toggle-button palette-tone1-fg palette-white-bg cta-lv1-unselected">Read Bio</a>
+      <a href="/portfolio/" id="view-portfolio" class="toggle-button palette-white-fg palette-highlight-bg toggle-button-selected cta-lv1-selected">View Portfolio</a>
+    </div>
   </div>
 </section>
 <section class="section-separator palette-tone2-bg"></section>
@@ -31,6 +34,8 @@ title: Portfolio
               <div>
                 <%= link_to study.data.title, study.url %>
                 <!--          <span class="case-study-title"><%#= study.data.title %></span>-->
+
+                <%= partial "casestudy_triangle" %>
               </div>
               <ul>
                 <% study.data.category.each do |cat| %>
@@ -50,35 +55,37 @@ title: Portfolio
 <section class="section-separator palette-white-bg"></section>
 <div class="palette-tone2-bg">
   <section id="projects" class="palette-white-bg">
-    <div class="project-list-container content-half-width">
-      <span class="project-list-title palette-tone1-fg">Projects</span>
-      <ul class="project-list  content-half-width">
-        <% sub_pages('project').each do |resource| %>
-          <li class="project-summary palette-tone2-bg palette-black-fg">
-            <span class="project-title-wrapper ">
-              <%= link_to resource.data.title, resource.url %>
-              <div class="project-description"><%= resource.data.description %></div>
-              <ul>
-                <% resource.data.category.each do |cat| %>
-                  <li>#<%= cat %></li>
-                <% end %>
-              </ul>
-            </span>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="filters-container">
-      <span class="project-list-title palette-tone1-fg">Filter</span>
-      <!--      Filter: <strong>All Projects</strong>-->
-      <!This should provide a list of unique categories as pulled from the YAML frontmatter on each individual case study and project. code below is just to be used during development for CSS skinning >
-      <ul class="button-list">
-        <li class="palette-tone1-border palette-tone1-bg"><a class="selected-filter palette-white-fg" href="#">All Projects</a></li>
-        <li class="palette-tone1-border"><a class="unselected-filter palette-tone1-fg" href="#">Transpose</a></li>
-        <li class="palette-tone1-border"><a class="unselected-filter palette-tone1-fg" href="#">Golden Frog</a></li>
-        <li class="palette-tone1-border"><a class="unselected-filter palette-tone1-fg" href="#">Add'l category</a></li>
-        <li class="palette-tone1-border"><a class="unselected-filter palette-tone1-fg" href="#">Etc</a></li>
-      </ul>
+    <div class="projects-container content-width">
+      <div class="project-list-container content-half-width">
+        <span class="project-list-title palette-tone1-fg">Projects</span>
+        <ul class="project-list  content-half-width">
+          <% sub_pages('project').each do |resource| %>
+            <li class="project-summary palette-tone2-bg palette-black-fg">
+              <span class="project-title-wrapper ">
+                <%= link_to resource.data.title, resource.url %>
+                <div class="project-description"><%= resource.data.description %></div>
+                <ul>
+                  <% resource.data.category.each do |cat| %>
+                    <li>#<%= cat %></li>
+                  <% end %>
+                </ul>
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="filters-container content-half-width">
+        <span class="project-list-title palette-tone1-fg">Filter</span>
+        <!--      Filter: <strong>All Projects</strong>-->
+        <!This should provide a list of unique categories as pulled from the YAML frontmatter on each individual case study and project. code below is just to be used during development for CSS skinning >
+        <ul class="button-list">
+          <li class="palette-tone1-border palette-tone1-bg"><a class="selected-filter palette-white-fg" href="#">All Projects</a></li>
+          <li class="palette-tone1-border"><a class="unselected-filter palette-tone1-fg" href="#">Transpose</a></li>
+          <li class="palette-tone1-border"><a class="unselected-filter palette-tone1-fg" href="#">Golden Frog</a></li>
+          <li class="palette-tone1-border"><a class="unselected-filter palette-tone1-fg" href="#">Add'l category</a></li>
+          <li class="palette-tone1-border"><a class="unselected-filter palette-tone1-fg" href="#">Etc</a></li>
+        </ul>
+      </div>
     </div>
   </section>
   <section id="endpage-buttons" class="section-white palette-white-bg">

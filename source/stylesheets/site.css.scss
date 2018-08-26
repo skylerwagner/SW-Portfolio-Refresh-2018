@@ -110,7 +110,6 @@ body {
 
 section#primary-header {
   margin-left: 20px;
-  //width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,7 +125,6 @@ div#explain-wrapper {
 }
 
 #explain-link {
-    //width: 134px;
     height: 15px;
     font-family: Lato;
     font-size: 12px;
@@ -139,7 +137,6 @@ div#explain-wrapper {
 }
 
 div#sundial-wrapper {
-  //padding: 127px 0 0 20%;
   padding: 127px 0 0 0;
   display: flex;
   flex-direction: row;
@@ -165,7 +162,6 @@ div.intro-text-wrapper {
 }
 
 span.intro-text {
-  //width: 1050px;
   height: 180px;
   font-family: HoeflerText;
   font-size: 48px;
@@ -178,18 +174,32 @@ span.intro-text {
   box-decoration-break: clone;
 }
 
+div.drag-indicator-container {
+  div {
+    height: 78px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    svg {
+      padding-right: 60px;
+    }
+  }
+}
+
 section.section-separator {
   height: 10px;
   display: block;
 }
 
 /******************************************************************************
- bio intro
+ navigation toggle buttons
  ******************************************************************************/
 
 section#toggle-buttons {
   margin-left: 20px;
-  padding: 78px 0 70px 0px;
+  //padding: 78px 0 70px 0px;
+  padding: 0px 0 70px 0px;
   display: flex;
   justify-content: center;
 }
@@ -199,14 +209,24 @@ div.toggle-button-container {
   //left: -10px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: start;
+
+  a#read-bio {
+    width: 33.3%;
+    margin-right: 10px;
+  }
+
+  a#view-portfolio {
+    width: calc(66.6% - 10px);
+  }
+
 }
 
 .toggle-button {
   height: 40px;
   //padding: 10px 60px 20px 20px;
+  //padding: 15px 60px 15px 20px;
   padding: 15px 60px 15px 20px;
-  margin-right: 10px;
   font-family: Lato;
   font-size: 36px;
   font-weight: 100;
@@ -240,10 +260,8 @@ div.toggle-button-container {
   height: 5px;
   width: 100%;
   padding: 0 60px 0 20px;
-  //background-color: red;
   position: relative;
   left: -20px;
-  //top: 20px;
   top: 15px;
   background-color: #ffcb23; // TODO don't hard code this one
 }
@@ -251,6 +269,10 @@ div.toggle-button-container {
 .toggle-button-unselected {
 
 }
+
+/******************************************************************************
+ bio intro
+ ******************************************************************************/
 
 section#introduction {
   padding: 0;
@@ -273,7 +295,6 @@ p.body-text-article {
   font-weight: 100;
   line-height: 1.4444444444444444;
   margin: 0;
-  //padding-after: 18px;
   padding-bottom: 18px;
 
   strong {
@@ -323,7 +344,6 @@ ul.button-list {
 
 section#case-studies {
   margin-left: 20px;
-  //padding: 0 0 0 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -331,7 +351,6 @@ section#case-studies {
 
 span.project-list-title {
   display: block;
-  //padding: 10px 0 10px 0;
   padding: 0px 0 10px 0;
   height: 17px;
   font-family: Lato;
@@ -342,7 +361,6 @@ span.project-list-title {
 ul.case-study-list {
   padding: 0 0 35px 0;
   margin: 0;
-  //margin: 0 0 20px 0;
 }
 
 li.case-study-summary {
@@ -351,22 +369,34 @@ li.case-study-summary {
 
 span.case-study-title-wrapper {
 
+  div {
+    display: flex;
+    flex-direction: row;
 
-  a {
-    display: block;
-    margin: 20px 367px 0 20px;
-    min-width: 1px;
-    max-width: 263px;
-    width: 263px;
-    font-family: Lato;
-    font-size: 36px;
-    font-weight: 300;
-    line-height: 1.3333333333333333;
-    overflow: hidden;
-    word-wrap: break-word;
-    text-decoration: none;
-    box-decoration-break: clone;
-    color: #ffffff; // TODO don't hard code this one
+    a {
+      display: block;
+      margin: 20px 0px 0 20px;
+      min-width: 1px;
+      width: 50%;
+      font-family: Lato;
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 1.3333333333333333;
+      overflow: hidden;
+      word-wrap: break-word;
+      text-decoration: none;
+      box-decoration-break: clone;
+      color: #ffffff; // TODO don't hard code this one
+    }
+
+    svg {
+      position: relative;
+      top: 50px;
+      left: calc(50% - 80px);
+      width: 120px;
+      height: 120px;
+    }
+
   }
 
   ul {
@@ -394,23 +424,24 @@ div.case-study-background {
 
 section#projects {
   margin-left: 20px;
-  //padding: 0 0 0 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.projects-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  //justify-content: space-around;
   justify-content: center;
 }
 
 div.project-list-container {
   flex: 1;
-  //max-width: 650px;
 }
 
 ul.project-list {
   padding: 0;
-  //width: 650px;
-
   margin: 0 0 20px 0;
 }
 
@@ -457,8 +488,6 @@ div.project-description {
 
 div.filters-container {
   flex: 1;
-  width: 300px;
-  max-width: 650px;
   margin-left: 10px;
 
   ul {
