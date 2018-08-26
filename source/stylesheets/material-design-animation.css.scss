@@ -1,0 +1,181 @@
+/***
+Adapted from the example at https://codemyui.com/pure-css-material-design-button-hover-animation/
+ */
+
+@import "compass/css3";
+
+// Compass!
+@import "compass/reset";
+@import "compass/css3/animation";
+@import "compass/css3/appearance";
+@import "compass/css3/transition";
+
+// Robot from Google Fonts
+//@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
+
+// Background and foreground colors
+$bg-color: #2196F3;
+$fg-color: darken($bg-color,7%);
+
+// Penner easing equation via http://matthewlein.com/ceaser/
+$easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+/*body {
+  font-family: Roboto, sans-serif;
+  background: $bg-color;
+  font-size: 16pt;
+  color: lighten($bg-color,15%);
+  font-weight: 200;
+  padding: 2em;
+}*/
+
+.col {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*main {
+  @include transform(translateX(-50%));
+  position: relative;
+  display: inline-block;
+  left: 50%;
+
+  header {
+    color: #fff;
+    text-align: center;
+    margin: 1em;
+    h1 {
+      font-size: 1.25em;
+      margin: 0.25em;
+    }
+    a {
+      color: lighten($bg-color,15%);
+      text-decoration: none;
+    }
+  }
+}*/
+
+.button {
+  position: relative;
+  margin: 1em;
+  font-weight: 100;
+  padding: 1em 1.25em;
+  text-align: center;
+  width: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+
+  &.raised {
+    @include transition(0.1s all);
+    background: $fg-color;
+    box-shadow: 0px 1px 1px darken($fg-color,15%);
+    &:active {
+      background: darken($fg-color,2.5%);
+      box-shadow: 0px 1px 1px darken($fg-color,25%);
+    }
+  }
+}
+
+
+/*span {
+  font-weight: 400;
+}*/
+
+input[type="checkbox"].toggle {
+  @include appearance(none);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0; // Get rid of Chrome's ugly outline on focus
+  }
+}
+
+.anim {
+  @include transform(translateY(-50%) translateX(-50%));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+
+  // The ':before' psuedo element is a spacing ghost to make the
+  // ':after' psuedo element a square, with width & height
+  // automatically equal to the parent's width.
+  &:before {
+    position: relative;
+    content: '';
+    display: block;
+    margin-top: 100%;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+  }
+}
+
+.clickable {
+  .toggle:checked + .anim {
+    @include animation(anim-in 0.75s);
+    &:after { @include animation(anim-in-pseudo 0.75s); }
+  }
+
+  .toggle:not(:checked) + .anim {
+    @include animation(anim-out 0.75s);
+    &:after { @include animation(anim-out-pseudo 0.75s); }
+  }
+}
+
+.hoverable:hover > .anim {
+  @include animation(anim-out 0.75s);
+  &:after { @include animation(anim-out-pseudo 0.75s); }
+}
+
+// Keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes(anim-in) {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@include keyframes(anim-in-pseudo) {
+  0% { background: rgba(#000,0.25); }
+  100% { background: rgba(#000,0); }
+}
+
+@include keyframes(anim-out) {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@include keyframes(anim-out-pseudo) {
+  0% { background: rgba(#000,0.25); }
+  100% { background: rgba(#000,0); }
+}

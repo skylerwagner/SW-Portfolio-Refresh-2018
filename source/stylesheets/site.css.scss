@@ -44,20 +44,89 @@ body {
   margin: 0;
 }
 
+/* Desktop */
+
+.site-width {
+  min-width: 1440px;
+}
+
+.content-width {
+  width: 1300px;
+  max-width: 1300px;
+  min-width: 1300px;
+}
+
+.content-half-width {
+  width: 650px;
+  max-width: 650px;
+  min-width: 650px;
+}
+
+
+/* Tablet */
+@media screen and (max-width: 992px) {
+  .site-width {
+    min-width: 768px;
+  }
+
+  .content-width {
+    width: 650px;
+    max-width: 650px;
+    min-width: 650px;
+  }
+
+  .content-half-width {
+    width: 650px;
+    max-width: 650px;
+    min-width: 650px;
+  }
+}
+
+/* Mobile */
+//@media screen and (max-width: 600px) {
+@media screen and (max-width: 460px) {
+  .site-width {
+    min-width: 375px;
+  }
+
+  .content-width {
+    width: 335px;
+    max-width: 335px;
+    min-width: 335px;
+  }
+
+  .content-half-width {
+    width: 335px;
+    max-width: 335px;
+    min-width: 335px;
+  }
+}
+
+
 
 /******************************************************************************
  header
  ******************************************************************************/
 
+section#primary-header {
+  margin-left: 20px;
+  //width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 div#explain-wrapper {
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
+  width: calc(100% - 20px);
   height: 15px;
   padding: 20px 20px 0 0;
 }
 
 #explain-link {
-    width: 134px;
+    //width: 134px;
     height: 15px;
     font-family: Lato;
     font-size: 12px;
@@ -70,7 +139,8 @@ div#explain-wrapper {
 }
 
 div#sundial-wrapper {
-  padding: 127px 0 0 20%;
+  //padding: 127px 0 0 20%;
+  padding: 127px 0 0 0;
   display: flex;
   flex-direction: row;
   overflow: auto;
@@ -91,11 +161,11 @@ div.sundial svg {
 }
 
 div.intro-text-wrapper {
-  padding: 143px 140px 0 140px;
+  padding: 143px 0px 0 0px;
 }
 
 span.intro-text {
-  width: 1050px;
+  //width: 1050px;
   height: 180px;
   font-family: HoeflerText;
   font-size: 48px;
@@ -108,30 +178,59 @@ span.intro-text {
   box-decoration-break: clone;
 }
 
+section.section-separator {
+  height: 10px;
+  display: block;
+}
 
 /******************************************************************************
  bio intro
  ******************************************************************************/
 
-$sectionWidth: 646px;
-
 section#toggle-buttons {
-
-  padding: 78px 0 70px 140px;
-  //width: $sectionWidth;
-  width: 100%;
+  margin-left: 20px;
+  padding: 78px 0 70px 0px;
   display: flex;
+  justify-content: center;
+}
 
-  a {
-    //width: 150px;
-    height: 40px;
-    padding: 10px 60px 20px 20px;
-    margin-right: 10px;
-    font-family: Lato;
-    font-size: 36px;
-    font-weight: 100;
-    text-decoration:none
-  }
+div.toggle-button-container {
+  //position: relative;
+  //left: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.toggle-button {
+  height: 40px;
+  //padding: 10px 60px 20px 20px;
+  padding: 15px 60px 15px 20px;
+  margin-right: 10px;
+  font-family: Lato;
+  font-size: 36px;
+  font-weight: 100;
+
+  // Material Design changes:
+  //position: relative;
+  //overflow: hidden;
+  //top: -50%;
+  //z-index: 0;
+  //display: flex;
+  //width: 200px;
+
+  text-decoration:none;
+  //text-wrap: none;
+
+/*  a {
+    // Material Design changes:
+    //padding-top: 5px;
+  }*/
+
+/*  span {
+    padding-top: 5px;
+    text-decoration:none;
+  }*/
 
 }
 
@@ -144,7 +243,8 @@ section#toggle-buttons {
   //background-color: red;
   position: relative;
   left: -20px;
-  top: 20px;
+  //top: 20px;
+  top: 15px;
   background-color: #ffcb23; // TODO don't hard code this one
 }
 
@@ -153,14 +253,18 @@ section#toggle-buttons {
 }
 
 section#introduction {
-  padding: 0 0 0 140px;
-  width:  $sectionWidth;
+  padding: 0;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 p.body-text-intro {
   font-family: Lato;
   font-size: 24px;
   line-height: 1.4444444444444444;
+  margin: 0;
+  padding: 24px 0 24px 0;
 }
 
 p.body-text-article {
@@ -168,6 +272,9 @@ p.body-text-article {
   font-size: 18px;
   font-weight: 100;
   line-height: 1.4444444444444444;
+  margin: 0;
+  //padding-after: 18px;
+  padding-bottom: 18px;
 
   strong {
     font-weight: normal;
@@ -176,20 +283,18 @@ p.body-text-article {
 }
 
 section#endpage-buttons {
-  padding: 0 0 0 140px;
-  width:  $sectionWidth;
-
-  ul {
-    li {
-      width: 650px;
-    }
-  }
+  padding: 0;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 ul.button-list {
-  padding: 0;
+  padding: 16px 0 16px 0;
+  margin: 0;
 
   li {
+    width: 100%;
     list-style-type: none;
     height: 50px;
     border: solid 2px;
@@ -215,13 +320,19 @@ ul.button-list {
  portfolio
  ******************************************************************************/
 
+
 section#case-studies {
-  padding: 0 0 0 140px;
+  margin-left: 20px;
+  //padding: 0 0 0 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 span.project-list-title {
   display: block;
-  padding: 10px 0 10px 0;
+  //padding: 10px 0 10px 0;
+  padding: 0px 0 10px 0;
   height: 17px;
   font-family: Lato;
   font-size: 14px;
@@ -229,8 +340,9 @@ span.project-list-title {
 }
 
 ul.case-study-list {
-  padding: 0;
-  margin: 0 0 20px 0;
+  padding: 0 0 35px 0;
+  margin: 0;
+  //margin: 0 0 20px 0;
 }
 
 li.case-study-summary {
@@ -238,7 +350,7 @@ li.case-study-summary {
 }
 
 span.case-study-title-wrapper {
-  width: 650px;
+
 
   a {
     display: block;
@@ -273,20 +385,31 @@ span.case-study-title-wrapper {
 
 }
 
+div.case-study-background {
+
+  svg {
+    margin: 20px 0 0 72px;
+  }
+}
+
 section#projects {
-  padding: 0 0 0 140px;
+  margin-left: 20px;
+  //padding: 0 0 0 140px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  //justify-content: space-around;
+  justify-content: center;
 }
 
 div.project-list-container {
   flex: 1;
+  //max-width: 650px;
 }
 
 ul.project-list {
   padding: 0;
-  width: 650px;
+  //width: 650px;
 
   margin: 0 0 20px 0;
 }
@@ -335,6 +458,7 @@ div.project-description {
 div.filters-container {
   flex: 1;
   width: 300px;
+  max-width: 650px;
   margin-left: 10px;
 
   ul {
@@ -350,8 +474,9 @@ div.filters-container {
 div.skylermadethis-wrapper {
   display: flex;
   justify-content: flex-end;
-  padding: 0 15px 0 0;
-  margin-bottom:  61px;
+  padding: 0 15px 61px 0;
+  margin-left: 20px;
+  //margin-bottom:  61px;
 }
 
 a.skylermadethis {

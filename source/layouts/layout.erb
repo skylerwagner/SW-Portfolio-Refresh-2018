@@ -11,10 +11,11 @@
 
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title << " ↫ Skyler Wagner" || "Skyler Wagner" %></title>
-    <%= stylesheet_link_tag "site" %>
+		<%= stylesheet_link_tag "site" %>
+		<%#= stylesheet_link_tag "material-design-animation" %>
     <%= javascript_include_tag "site" %>
   </head>
-  <body>
+  <body class="palette-white-bg site-width">
 	  <section id="primary-header" class="section-grey palette-tone2-bg">
 			<div id="explain-wrapper" >
 				<a id="explain-link" class="animation-hint-text-onsolid palette-static-fg" href="#explain">Explain, please?</a>
@@ -23,16 +24,19 @@
 				</div>
 			</div>
 			<!--      <div id="sundial-wrapper"  style="display: flex; flex-direction: row; overflow: hidden; width: 100%; flex-wrap: nowrap; align-items: center; justify-content:  space-around">-->
-			<div id="sundial-wrapper">
+			<div id="sundial-wrapper" class="content-width">
 				<%= partial "sundial" %>
       </div>
-      <div class="intro-text-wrapper">
+      <div class="intro-text-wrapper content-width">
         <span class="intro-text palette-white-fg palette-tone1-bg">Skyler Wagner lorem integer erat a ante, cenenatis dapibus posuere velit aliquet.</span>
       </div>
 	  </section>
+		<section class="section-separator palette-tone2-bg" />
 		<%= yield %>
-    <div class="skylermadethis-wrapper palette-white-bg">
-      <a class="skylermadethis  palette-static-fg" href="#skylermadethis">#Skylermadethis </a>
-    </div>
+		<div class="palette-tone2-bg">
+			<div class="skylermadethis-wrapper palette-white-bg">
+				<a class="skylermadethis  palette-static-fg" href="#skylermadethis">#Skylermadethis </a>
+			</div>
+		</div>
   </body>
 </html>
