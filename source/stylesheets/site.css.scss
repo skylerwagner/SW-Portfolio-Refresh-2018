@@ -2,53 +2,8 @@
  site
  ******************************************************************************/
 
-.palette-static-fg {
-  color: #3b3b3b
-}
-
-.palette-tone1-bg {
-  background-color: #9b9b9b;
-}
-
-.palette-tone1-fg {
-  color: #9b9b9b !important;
-}
-
-.palette-tone1-border {
-  border-color: #9b9b9b;
-}
-
-.palette-tone1-border {
-  border-color: #9b9b9b !important;
-}
-
-.palette-tone1-30pct-border {
-  border-color: #d7d7d7;
-}
-
-.palette-tone2-bg {
-  background-color: #f1f1f1;
-}
-
-.palette-highlight-bg {
-  background-color: #ffcb23;
-}
-
-.palette-black-fg {
-  color: #242424;
-}
-
-.palette-black-border {
-  border-color: #242424;
-}
-
-.palette-white-fg {
-  color: #ffffff !important;
-}
-
-.palette-white-bg {
-  background-color: #ffffff
-}
+$tabletBreakpoint: 992px;
+$mobileBreakpoint: 600px;
 
 body {
   font-family: 'Lato', sans-serif;
@@ -76,7 +31,7 @@ body {
 
 
 /* Tablet */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: $tabletBreakpoint) {
   .site-width {
     min-width: 768px;
   }
@@ -96,7 +51,7 @@ body {
 
 /* Mobile */
 //@media screen and (max-width: 600px) {
-@media screen and (max-width: 460px) {
+@media screen and (max-width: $mobileBreakpoint) {
   .site-width {
     min-width: 375px;
   }
@@ -125,6 +80,7 @@ section#primary-header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 div#explain-wrapper {
@@ -149,11 +105,14 @@ div#explain-wrapper {
 }
 
 div#sundial-wrapper {
+  position: relative;
   padding: 127px 0 0 0;
+  min-height: 375px;
   display: flex;
   flex-direction: row;
-  overflow: auto;
-  overflow-y: hidden;
+  //overflow: auto;
+  //overflow-y: hidden;
+  overflow: visible;
   align-items: center;
 }
 
@@ -163,10 +122,10 @@ div.sundial {
   flex: 1;
   display: flex;
   justify-content: center;
+  position: absolute;
 }
 
 div.sundial svg {
-
 }
 
 div.intro-text-wrapper {
@@ -175,15 +134,7 @@ div.intro-text-wrapper {
 
 span.intro-text {
   height: 180px;
-  font-family: HoeflerText;
-  font-size: 48px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2.0416666666666665;
-  letter-spacing: normal;
   padding: 16px 25px 16px 25px;
-  box-decoration-break: clone;
 }
 
 div.drag-indicator-container {
@@ -236,34 +187,19 @@ div.toggle-button-container {
 
 .toggle-button {
   height: 40px;
-  //padding: 10px 60px 20px 20px;
-  //padding: 15px 60px 15px 20px;
-  padding: 15px 60px 15px 20px;
-  font-family: Lato;
-  font-size: 36px;
-  font-weight: 100;
-
-  // Material Design changes:
-  //position: relative;
-  //overflow: hidden;
-  //top: -50%;
-  //z-index: 0;
-  //display: flex;
-  //width: 200px;
-
+  line-height: 40px;
+  display: block;
+  padding: 15px 0px 15px 20px;
   text-decoration:none;
-  //text-wrap: none;
-
-/*  a {
-    // Material Design changes:
-    //padding-top: 5px;
-  }*/
-
-/*  span {
-    padding-top: 5px;
+}
+@media screen and (max-width: $mobileBreakpoint) {
+  .toggle-button {
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    padding: 5px 0px 5px 10px;
     text-decoration:none;
-  }*/
-
+  }
 }
 
 .toggle-button-selected:after {
@@ -271,11 +207,24 @@ div.toggle-button-container {
   display: block;
   height: 5px;
   width: 100%;
-  padding: 0 60px 0 20px;
+  padding: 0 0px 0 20px;
   position: relative;
   left: -20px;
-  top: 15px;
-  background-color: #ffcb23; // TODO don't hard code this one
+  top: 20px;
+  background-color: inherit;
+}
+@media screen and (max-width: $mobileBreakpoint) {
+  .toggle-button-selected:after {
+    content: " ";
+    display: block;
+    height: 5px;
+    width: 100%;
+    padding: 0 0px 0 10px;
+    position: relative;
+    left: -10px;
+    top: 10px;
+    background-color: inherit;
+  }
 }
 
 .toggle-button-unselected {
@@ -294,25 +243,13 @@ section#introduction {
 }
 
 p.body-text-intro {
-  font-family: Lato;
-  font-size: 24px;
-  line-height: 1.4444444444444444;
   margin: 0;
   padding: 24px 0 24px 0;
 }
 
 p.body-text-article {
-  font-family: Lato;
-  font-size: 18px;
-  font-weight: 100;
-  line-height: 1.4444444444444444;
   margin: 0;
   padding-bottom: 18px;
-
-  strong {
-    font-weight: normal;
-  }
-
 }
 
 section#endpage-buttons {
@@ -330,7 +267,9 @@ ul.button-list {
     width: 100%;
     list-style-type: none;
     height: 50px;
-    border: solid 2px;
+    //border: solid 2px;
+    border-style: solid;
+    border-width: 2px;
     margin: 0 0 20px 0;
     display: flex;
     align-items: center;

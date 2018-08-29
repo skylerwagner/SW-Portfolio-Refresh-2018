@@ -1,5 +1,3 @@
-// This is where it all goes :)
-
 
 let frameCount = 0;
 let animationId = null;
@@ -7,7 +5,13 @@ let animationId = null;
 function animate() {
     frameCount++;
 
-    dragIndicatorAnimation(frameCount);
+    if (typeof dragIndicatorAnimation === "function") {
+        dragIndicatorAnimation(frameCount);
+    }
+
+    if (typeof animateSundials === "function") {
+        animateSundials(frameCount);
+    }
 
     nextAnimation();
 }
@@ -16,4 +20,10 @@ function nextAnimation() {
     animationId = requestAnimationFrame(animate);
 }
 
-nextAnimation();
+
+window.onload = function () {
+    nextAnimation();
+    if (typeof sundialInit() === "function") {
+        sundialInit();
+    }
+}

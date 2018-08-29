@@ -1,0 +1,93 @@
+
+$colorTransitionProperties: stroke, fill, color, background-color, border-bottom-color, border-top-color, border-left-color, border-right-color;
+$colorTansitionDuration: 2s;
+$colorTansitionFunction: ease;
+$colorTansitionDelay: 0s;
+
+.palette-color-transition {
+  transition-property: $colorTransitionProperties;
+  transition-duration: $colorTansitionDuration;
+  transition-timing-function: $colorTansitionFunction;
+  transition-delay: $colorTansitionDelay;
+}
+
+.palette-static-fg {
+  @extend .palette-color-transition;
+  color: #3b3b3b
+}
+
+.palette-tone1-bg {
+  @extend .palette-color-transition;
+  background-color: #9b9b9b;
+}
+
+.palette-tone1-fg {
+  @extend .palette-color-transition;
+  color: #9b9b9b;
+}
+
+.palette-tone1-border {
+  @extend .palette-color-transition;
+  border-color: #9b9b9b;
+}
+
+.palette-tone1-fill {
+  @extend .palette-color-transition;
+  fill: #9b9b9b;
+}
+
+.palette-tone1-stroke {
+  @extend .palette-color-transition;
+  stroke: #9b9b9b;
+}
+
+.palette-tone1-30pct-border {
+  @extend .palette-color-transition;
+  border-color: #d7d7d7;
+}
+
+.palette-tone2-bg {
+  @extend .palette-color-transition;
+  background-color: #f1f1f1;
+}
+
+.palette-tone2-border {
+  @extend .palette-color-transition;
+  border-color: #f1f1f1;
+}
+
+.palette-highlight-bg {
+  @extend .palette-color-transition;
+  background-color: #ffcb23;
+}
+
+.palette-highlight-fill {
+  @extend .palette-color-transition;
+  fill: #ffcb23;
+}
+
+
+.palette-black-fg {
+  @extend .palette-color-transition;
+  color: #242424;
+}
+
+.palette-black-border {
+  @extend .palette-color-transition;
+  border-color: #242424;
+}
+
+.palette-white-fg {
+  @extend .palette-color-transition;
+  color: #ffffff;
+}
+
+.palette-white-bg {
+   @extend .palette-color-transition;
+   background-color: #ffffff
+}
+
+.palette-white-fill {
+  @extend .palette-color-transition;
+  fill: #ffffff
+}

@@ -12,10 +12,13 @@
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title << " ↫ Skyler Wagner" || "Skyler Wagner" %></title>
 		<%= stylesheet_link_tag "site" %>
+		<%= stylesheet_link_tag "color-theme" %>
+		<%= stylesheet_link_tag "fonts" %>
 		<%#= stylesheet_link_tag "material-design-animation" %>
 		<%= javascript_include_tag "site" %>
 		<%= javascript_include_tag "drag_indicator_animation" %>
 		<%= javascript_include_tag "color_theme_manager" %>
+		<%= javascript_include_tag "sundial_animation" %>
   </head>
   <body class="palette-white-bg site-width">
 	  <section id="primary-header" class="section-grey palette-tone2-bg">
@@ -30,7 +33,7 @@
 				<%= partial "sundial" %>
       </div>
       <div class="intro-text-wrapper content-width">
-        <span class="intro-text palette-white-fg palette-tone1-bg">Skyler Wagner lorem integer erat a ante, cenenatis dapibus posuere velit aliquet.</span>
+        <span class="intro-text fonts-intro-text palette-white-fg palette-tone1-bg">Skyler Wagner lorem integer erat a ante, cenenatis dapibus posuere velit aliquet.</span>
       </div>
       <div class="drag-indicator-container content-width">
         <div class="content-half-width">

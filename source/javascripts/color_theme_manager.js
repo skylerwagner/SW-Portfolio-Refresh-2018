@@ -1,5 +1,4 @@
 
-
 const themes = [
     { // Default
         tone1: '#9b9b9b',
@@ -7,6 +6,13 @@ const themes = [
         highlight: '#ffcb23',
         black: '#242424',
         white: '#ffffff'
+    },
+    { // Example 1
+        tone1: '#054863',
+        tone2: '#faeee4',
+        highlight: '#00acf0',
+        black: '#042735',
+        white: '#f6f3f0'
     },
     { // Example 2
         tone1: '#7a7d74',
@@ -18,30 +24,23 @@ const themes = [
 
 ];
 
-
 function setColorTheme(index) {
     let theme = themes[index];
+    setAllColorProperties(theme, "tone1");
+    setAllColorProperties(theme, "tone2");
+    setAllColorProperties(theme, "highlight");
+    setAllColorProperties(theme, "black");
+    setAllColorProperties(theme, "white");
 
-    setColorProperty("palette-tone1-bg", "backgroundColor", theme.tone1);
-    setColorProperty("palette-tone1-fg", "color", theme.tone1);
-    setColorProperty("palette-tone1-border", "borderColor", theme.tone1);
+}
 
-    setColorProperty("palette-tone2-bg", "backgroundColor", theme.tone2);
-    setColorProperty("palette-tone2-fg", "color", theme.tone2);
-    setColorProperty("palette-tone2-border", "borderColor", theme.tone2);
-
-    setColorProperty("palette-highlight-bg", "backgroundColor", theme.highlight);
-    setColorProperty("palette-highlight-fg", "color", theme.highlight);
-    setColorProperty("palette-highlight-border", "borderColor", theme.highlight);
-
-    setColorProperty("palette-black-bg", "backgroundColor", theme.black);
-    setColorProperty("palette-black-fg", "color", theme.black);
-    setColorProperty("palette-black-border", "borderColor", theme.black);
-
-    setColorProperty("palette-white-bg", "backgroundColor", theme.white);
-    setColorProperty("palette-white-fg", "color", theme.white);
-    setColorProperty("palette-white-border", "borderColor", theme.white);
-    
+function setAllColorProperties(theme, name) {
+    let color = theme[name];
+    setColorProperty("palette-"+name+"-bg", "backgroundColor", color);
+    setColorProperty("palette-"+name+"-fg", "color", color);
+    setColorProperty("palette-"+name+"-border", "borderColor", color);
+    setColorProperty("palette-"+name+"-fill", "fill", color);
+    setColorProperty("palette-"+name+"-stroke", "stroke", color);
 }
 
 function setColorProperty(className, property, color) {
@@ -54,6 +53,10 @@ function setColorProperty(className, property, color) {
             element.style.backgroundColor = color;
         } else if (property === "borderColor") {
             element.style.borderColor = color;
+        } else if (property === "fill") {
+            element.style.fill = color;
+        } else if (property === "stroke") {
+            element.style.stroke = color;
         }
     }
 }

@@ -12,6 +12,8 @@
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "Middleman" %></title>
     <%= stylesheet_link_tag "site" %>
+    <%= stylesheet_link_tag "color-theme" %>
+    <%= stylesheet_link_tag "fonts" %>
     <%= stylesheet_link_tag "project-detail" %>
     <%= javascript_include_tag "site" %>
     <%= javascript_include_tag "color_theme_manager" %>
@@ -36,7 +38,7 @@
               </div>
 
               <div class="project-detail-title content-width">
-                <span class="intro-text palette-white-fg palette-tone1-bg">
+                <span class="intro-text fonts-intro-text palette-white-fg palette-tone1-bg">
                   <%= current_page.data.title %>
                 </span>
               </div>
@@ -52,23 +54,33 @@
 
             </div>
 
+            <section id="endpage-buttons" class="section-white palette-white-bg">
+              <div class="content-width">
+                <ul class="button-list content-half-width">
+                  <!--    <li class="color2-border"><a href="" class="color2-fg">Download Resume as a PDF</a></li>-->
+                  <li class="palette-tone1-border"><a href="" class="palette-tone1-fg">View Bio and Resume</a></li>
+                  <li class="palette-tone1-border"><a href="" class="palette-tone1-fg">Contact Skyler</a></li>
+                </ul>
+              </div>
+            </section>
+
           </div>
         </div>
       </div>
     </section>
-    <section class="section-separator palette-tone2-bg"></section>
-    <section class="section-separator palette-white-bg"></section>
-    <div class="palette-tone2-bg">
-      <section id="endpage-buttons" class="section-white palette-white-bg">
-        <div class="content-width">
-          <ul class="button-list content-half-width">
-            <!--    <li class="color2-border"><a href="" class="color2-fg">Download Resume as a PDF</a></li>-->
-            <li class="palette-tone1-border"><a href="" class="palette-tone1-fg">View Bio and Resume</a></li>
-            <li class="palette-tone1-border"><a href="" class="palette-tone1-fg">Contact Skyler</a></li>
-          </ul>
-        </div>
-      </section>
-    </div>
+<!--    <section class="section-separator palette-tone2-bg"></section>-->
+<!--    <section class="section-separator palette-white-bg"></section>-->
+<!--    <div class="palette-tone2-bg">-->
+<!--      <section id="endpage-buttons" class="section-white palette-white-bg">-->
+<!--        <div class="content-width">-->
+<!--          <ul class="button-list content-half-width">-->
+<!--                <li class="color2-border"><a href="" class="color2-fg">Download Resume as a PDF</a></li>-->
+<!--            <li class="palette-tone1-border"><a href="" class="palette-tone1-fg">View Bio and Resume</a></li>-->
+<!--            <li class="palette-tone1-border"><a href="" class="palette-tone1-fg">Contact Skyler</a></li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </section>-->
+<!--    </div>-->
     <div class="palette-tone2-bg">
       <div class="skylermadethis-wrapper palette-white-bg">
         <a class="skylermadethis  palette-static-fg" href="#skylermadethis">#Skylermadethis </a>
