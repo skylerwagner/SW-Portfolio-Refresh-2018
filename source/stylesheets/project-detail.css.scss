@@ -1,6 +1,8 @@
 
+@import "config";
+
 section#project-detail {
-  margin-left: 20px;
+  //margin-left: 20px;
   width: calc(100% - 22px);
   display: flex;
   flex-direction: column;
@@ -25,71 +27,87 @@ section#project-detail {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
 }
 
 .project-detail-content {
-
-  h2 { /* from p.body-text-intro */
-    font-family: Lato;
-    font-size: 24px;
-    line-height: 1.4444444444444444;
+  h2 {
     margin: 0;
     padding: 24px 0 24px 0;
-    font-weight: normal;
   }
-
   p {
     width: 50%;
-
-    /* from p.body-text-article */
-    font-family: Lato;
-    font-size: 18px;
-    font-weight: 100;
-    line-height: 1.4444444444444444;
     margin: 0;
     padding-bottom: 18px;
-
     strong {
       font-weight: normal;
     }
+  }
+  blockquote {
+    width: 50%;
+    padding: 30px;
+    margin-left: 0;
+    p {
+      width: auto;
+    }
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: $tabletBreakpoint) {
+
+  section#project-detail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div.palette-tone2-border {
+      border: none;
+      width: 100%;
+    }
+    div.palette-tone1-30pct-border {
+      border: none;
+      width: 100%;
+    }
 
   }
 
-  blockquote {
+  .project-detail-container {
+    border: none;
+    padding-bottom: 60px;
+
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: nowrap;
-    background-color: #f1f1f1; // TODO move this color
-    margin: 0;
-    padding: 0;
-    max-height: 250px;
+  }
+
+  .project-detail-content {
+    h2 {
+      margin: 0;
+      padding: 24px 0 24px 0;
+    }
     p {
       width: 100%;
-      padding: 0;
       margin: 0;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      flex-wrap: nowrap;
-
-      img {
-        flex: 1;
-        border: 1px solid #d7d7d7;
-        max-height: 250px;
-        max-width: 200px;
+      padding-bottom: 18px;
+      strong {
+        font-weight: normal;
+      }
+    }
+    blockquote {
+      width: 85%;
+      padding: 30px;
+      margin-left: 0;
+      p {
         width: auto;
-        height: auto;
-        margin-right: 20px;
-        cursor: pointer;
       }
     }
   }
+}
+
+a.project-detail-image-wrapper {
+  padding: 20px;
 }
 
 div.project-close-btn-wrapper {
@@ -145,6 +163,24 @@ div.project-detail-title-shape {
     height: 120px;
   }
 
+}
+@media screen and (max-width: $mobileBreakpoint) {
+  div.project-detail-title-shape {
+    position: relative;
+    top: 120px;
+    left: calc(100% - 120px);
+
+    width: 0px;
+    height: 0px;
+
+    z-index: -1;
+
+    svg {
+      width: 120px;
+      height: 120px;
+    }
+
+  }
 }
 
 ul.project-detail-categories {

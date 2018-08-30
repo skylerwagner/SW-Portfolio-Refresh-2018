@@ -1,9 +1,8 @@
+@import 'config';
+
 /******************************************************************************
  site
  ******************************************************************************/
-
-$tabletBreakpoint: 992px;
-$mobileBreakpoint: 600px;
 
 body {
   font-family: 'Lato', sans-serif;
@@ -384,7 +383,8 @@ div.projects-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  //justify-content: center;
+  justify-content: flex-start;
 }
 
 div.project-list-container {
@@ -398,6 +398,7 @@ ul.project-list {
 
 li.project-summary {
   list-style-type: none;
+  margin: 0 0 10px 0;
 }
 
 span.project-title-wrapper {

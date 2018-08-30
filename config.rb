@@ -53,6 +53,12 @@ activate :directory_indexes
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :underline => true, :highlight => true
 
+activate :external_pipeline,
+				 name: :webpack,
+				 command: build? ? './node_modules/webpack/bin/webpack.js --bail' : './node_modules/webpack/bin/webpack.js --watch -d',
+				 source: ".tmp/dist",
+				 latency: 1
+
 helpers do
 
 	def pages_by_category(category)  

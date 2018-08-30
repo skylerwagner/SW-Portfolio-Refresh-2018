@@ -5,3 +5,6 @@
 build/
 
 .idea/
+
+node_modules/
+source/javascripts/bundle.js
