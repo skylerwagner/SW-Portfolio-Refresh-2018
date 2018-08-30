@@ -1,0 +1,26 @@
+{
+  "name": "sw-portfolio-refresh-2018",
+  "version": "1.0.0",
+  "description": "SJW Portfolio 2018",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skylerwagner/SW-Portfolio-Refresh-2018.git"
+  },
+  "author": "Ian Zieg & Skyler Wagner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skylerwagner/SW-Portfolio-Refresh-2018/issues"
+  },
+  "homepage": "https://github.com/skylerwagner/SW-Portfolio-Refresh-2018#readme",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "simplelightbox": "^1.13.0",
+    "slick-carousel": "^1.8.1",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  }
+}

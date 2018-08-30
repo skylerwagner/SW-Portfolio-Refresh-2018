@@ -15,20 +15,24 @@
 		<%= stylesheet_link_tag "color-theme" %>
 		<%= stylesheet_link_tag "fonts" %>
 		<%#= stylesheet_link_tag "material-design-animation" %>
-		<%= javascript_include_tag "site" %>
-		<%= javascript_include_tag "drag_indicator_animation" %>
-		<%= javascript_include_tag "color_theme_manager" %>
-		<%= javascript_include_tag "sundial_animation" %>
+
+		<%= javascript_include_tag "bundle" %>
+
+		<%#= javascript_include_tag "site" %>
+		<%#= javascript_include_tag "drag_indicator_animation" %>
+		<%#= javascript_include_tag "color_theme_manager" %>
+		<%#= javascript_include_tag "sundial_animation" %>
+
   </head>
   <body class="palette-white-bg site-width">
 	  <section id="primary-header" class="section-grey palette-tone2-bg">
-			<div id="explain-wrapper" >
-				<a id="explain-link" class="animation-hint-text-onsolid palette-static-fg" href="#explain">Explain, please?</a>
-				<div class="animation-hint-text">
-					<%= partial "explainplease" %>
-				</div>
-			</div>
-			<!--      <div id="sundial-wrapper"  style="display: flex; flex-direction: row; overflow: hidden; width: 100%; flex-wrap: nowrap; align-items: center; justify-content:  space-around">-->
+<!--			<div id="explain-wrapper" >-->
+<!--				<a id="explain-link" class="animation-hint-text-onsolid palette-static-fg" href="#explain">Explain, please?</a>-->
+<!--				<div class="animation-hint-text">-->
+					<%#= partial "explainplease" %>
+<!--				</div>-->
+<!--			</div>-->
+
 			<div id="sundial-wrapper" class="content-width">
 				<%= partial "sundial" %>
       </div>
@@ -37,7 +41,7 @@
       </div>
       <div class="drag-indicator-container content-width">
         <div class="content-half-width">
-          <%= partial "drag_indicator" %>
+          <%#= partial "drag_indicator" %>
         </div>
       </div>
 	  </section>
