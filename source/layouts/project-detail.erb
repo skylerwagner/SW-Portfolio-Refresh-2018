@@ -10,7 +10,7 @@
     <!-- TODO serve font locally -->
 
     <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= current_page.data.title || "Middleman" %></title>
+    <title><%= current_page.data.title << " ↫ Portfolio ↫ Skyler Wagner" || "Skyler Wagner" %></title>
     <%= stylesheet_link_tag "site" %>
     <%= stylesheet_link_tag "color-theme" %>
     <%= stylesheet_link_tag "fonts" %>
