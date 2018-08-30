@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
 
     <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= thetitle = current_page.data.title << " ↫ Portfolio ↫ Skyler Wagner" || "Skyler Wagner" %></title>
+    <title><%= thetitle = current_page.data.title + " ↫ Portfolio ↫ Skyler Wagner" || "Skyler Wagner" %></title>
     <%= stylesheet_link_tag "site" %>
     <%= stylesheet_link_tag "color-theme" %>
     <%= stylesheet_link_tag "fonts" %>
