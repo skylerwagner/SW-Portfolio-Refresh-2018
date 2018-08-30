@@ -62,9 +62,9 @@ body {
   }
 
   .content-half-width {
-    width: 335px;
-    max-width: 335px;
-    min-width: 335px;
+    width: 300px;
+    max-width: 300px;
+    min-width: 300px;
   }
 }
 
@@ -323,29 +323,13 @@ span.case-study-title-wrapper {
     display: flex;
     flex-direction: row;
 
-    a {
-      display: block;
-      margin: 20px 0px 0 20px;
-      min-width: 1px;
-      width: 50%;
-      font-family: Lato;
-      font-size: 36px;
-      font-weight: 300;
-      line-height: 1.3333333333333333;
-      overflow: hidden;
-      word-wrap: break-word;
-      text-decoration: none;
-      box-decoration-break: clone;
-      color: #ffffff; // TODO don't hard code this one
-    }
-
-    svg {
+/*    svg {
       position: relative;
       top: 50px;
       left: calc(50% - 80px);
       width: 120px;
       height: 120px;
-    }
+    }*/
 
   }
 
@@ -365,12 +349,74 @@ span.case-study-title-wrapper {
 
 }
 
-div.case-study-background {
+span.case-study-title-wrapper div svg {
+  position: relative;
+  top: 50px;
+  left: calc(50% - 80px);
+  width: 120px;
+  height: 120px;
+}
+@media screen and (max-width: $mobileBreakpoint) {
+  span.case-study-title-wrapper div svg {
+    position: relative;
+    top: 50px;
+    left: calc(50% - 120px);
+    width: 120px;
+    height: 120px;
+  }
+}
 
+span.case-study-title-wrapper div a {
+  display: block;
+  margin: 20px 0px 0 20px;
+  min-width: 1px;
+  width: 50%;
+  font-family: Lato;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.3333333333333333;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-decoration: none;
+  box-decoration-break: clone;
+  color: #ffffff; // TODO don't hard code this one
+}
+
+@media screen and (max-width: $mobileBreakpoint) {
+  span.case-study-title-wrapper div a {
+    display: block;
+    margin: 20px 0px 0 20px;
+    min-width: 1px;
+    width: 50%;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.3333333333333333;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-decoration-break: clone;
+    color: #ffffff; // TODO don't hard code this one
+  }
+}
+
+
+div.case-study-background {
   svg {
     margin: 20px 0 0 72px;
   }
 }
+
+@media screen and (max-width: $mobileBreakpoint) {
+  div.case-study-background {
+    display: none;
+    svg {
+      margin: 20px 0 0 72px;
+    }
+  }
+
+}
+
 
 section#projects {
   margin-left: 20px;
@@ -405,7 +451,7 @@ span.project-title-wrapper {
   display: block;
   padding: 10px 0 10px 0;
 
-  a {
+ a {
     display: block;
     margin: 10px 70px 0 20px;
     width: 560px;
