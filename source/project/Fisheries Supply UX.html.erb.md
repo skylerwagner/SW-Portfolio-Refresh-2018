@@ -1,6 +1,6 @@
 ---
 title: "Fisheries Supply UX"
-description: "Nullam quis risus eget urna mollis ornare vel eu leo."
+description: "Using exhaustive research to create a personal, targeted e-commerce experience."
 category:
 - project
 - skylerwagner.com

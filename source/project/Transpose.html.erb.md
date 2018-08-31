@@ -1,11 +1,11 @@
 ---
 title: "Transpose"
-description: "Nullam quis risus eget urna mollis ornare vel eu leo."
+description: "Building Transpose's customer base using flexible, polished design; as a result of user-focued processes."
 category:
 - project
 - transpose
 ---
-<p>Transpose was the startup I co-founded and served as CCO for over three years. Transpose’s mission was to handle complex data management challenges for teams and businesses by allowing individual users to work with a shared set of data in a variety of informative ways. Through the hard work of my team, we created an incredibly complex, flexible product that allowed users to access the same data in a variety of ways, while not overly burdening the user. My designs were part of what helped us close over $2M worth of investment, maintain hundreds of thousands of active users, and bring our solution to businesses in dozens of countries.</p>
+<p>Transpose was the startup I co-founded and served as CCO for over three years. Transpose’s mission was to handle complex data management challenges for teams and businesses by allowing individual users to work with a shared set of data in a variety of informative ways. Through the hard work of my team, we created an incredibly complex, flexible product that allowed teams of users to access complex data in a variety of ways, ensuring that each user would see their team's data in a way that made sense to them. My designs were part of what helped us close over $2M worth of investment, maintain hundreds of thousands of active users, and bring our solution to businesses in dozens of countries.</p>
 
 > ![](/images/Transpose/1%20-%20Card%20View.png)
 > ![](/images/Transpose/2%20-%20Kanban%201.png)

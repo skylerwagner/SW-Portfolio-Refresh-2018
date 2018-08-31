@@ -1,6 +1,6 @@
 ---
 title: "Academic Work"
-description: "Nullam quis risus eget urna mollis ornare vel eu leo."
+description: "Foundations of my interest in the intersection of design and perceptive processes."
 category:
 - project
 - academic
