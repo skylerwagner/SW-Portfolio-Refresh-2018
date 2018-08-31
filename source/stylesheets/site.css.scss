@@ -120,8 +120,8 @@ div.sundial {
   padding-right: 343px;
   flex: 1;
   transition: opacity 2s ease;
+  opacity: 0.0;
   display: flex;
-  //display: none; // initially none but gets set to flex by JS
   justify-content: flex-start;
   position: absolute;
 }
@@ -464,7 +464,7 @@ span.project-title-wrapper {
     font-weight: 500;
     text-decoration: none;
     box-decoration-break: clone;
-    color: #242424;
+    //color: #242424;
   }
 
   ul {
