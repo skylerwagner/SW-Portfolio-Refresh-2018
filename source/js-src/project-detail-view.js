@@ -3,7 +3,7 @@ const slick = require("slick-carousel");
 jQuery = $;
 const simpleLightbox = require("simplelightbox");
 
-class ProjectDetailRenderer {
+class ProjectDetailView {
 
     render() {
 
@@ -53,4 +53,4 @@ class ProjectDetailRenderer {
 
 }
 
-module.exports = ProjectDetailRenderer;
+module.exports = ProjectDetailView;
