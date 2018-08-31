@@ -1,6 +1,6 @@
 ---
 title: "Cyphr Secure Messaging"
-description: "Nullam quis risus eget urna mollis ornare vel eu leo."
+description: "Using lessons from VyprVPN to expand Golden Frog's brand to new products."
 category:
 - project
 - golden frog
