@@ -17,9 +17,9 @@ body {
 }
 
 .content-width {
-  width: 1300px;
+  width: 950px;
   max-width: 1300px;
-  min-width: 1300px;
+  min-width: 950px;
 }
 
 .content-half-width {
@@ -36,9 +36,9 @@ body {
   }
 
   .content-width {
-    width: 650px;
+    width: 550px;
     max-width: 650px;
-    min-width: 650px;
+    min-width: 550px;
   }
 
   .content-half-width {
@@ -177,7 +177,7 @@ div.toggle-button-container {
   justify-content: start;
 
   a#read-bio {
-    width: 33.3%;
+    width: 46%;
     margin-right: 10px;
   }
 
