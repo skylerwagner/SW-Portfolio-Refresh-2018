@@ -119,12 +119,15 @@ div.sundial {
   min-width: 625px;
   padding-right: 343px;
   flex: 1;
+  transition: opacity 2s ease;
   display: flex;
-  justify-content: center;
+  //display: none; // initially none but gets set to flex by JS
+  justify-content: flex-start;
   position: absolute;
 }
 
 div.sundial svg {
+  //display: none;
 }
 
 div.intro-text-wrapper {
