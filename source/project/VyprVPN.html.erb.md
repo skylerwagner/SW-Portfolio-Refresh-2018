@@ -52,9 +52,5 @@ Redesigned versions of the MacOS and Windows apps were aligned with the new desi
 
 The current release of VyprVPN continues to reflect the the work originally done by me and my team, with minimal changes to design beyond regular maintenance. Versions for iOS, Android, Mac, Windows, routers running the Tomato Framework, Blackphone, Android TV, QNAP, and Anonabox. These have proved effective in taking Golden Frog to a broader consumer audience, with favorable reviews in Lifehacker, The New York Times, The Verge, Gizmodo, and Ars Technica.
 
-<ul class="button-list content-half-width">
-	<li class="palette-tone1-border">
-		<a class="palette-tone1-fg" href="https://www.goldenfrog.com/vyprvpn">VyprVpn Product Page</a>
-	</li>
-</ul>
+<a class="palette-tone1-fg" href="https://www.goldenfrog.com/vyprvpn">VyprVpn Product Page</a>
 

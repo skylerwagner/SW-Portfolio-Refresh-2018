@@ -31,4 +31,4 @@ category:
 
 <p>Golden Frog recently decided to sunset Cyphr in in order to focus on additional business-class VPN offerings, but the product remains available for download and continued use.</p>
 
-<ul class="button-list content-half-width"><li class="palette-tone1-border"><a class="palette-tone1-fg" href="https://www.goldenfrog.com/cyphr">Cyphr Product Page</a></li></ul>
+<a class="palette-tone1-fg" href="https://www.goldenfrog.com/cyphr">Cyphr Product Page</a>
