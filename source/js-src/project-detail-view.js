@@ -7,6 +7,14 @@ class ProjectDetailView {
 
     render() {
 
+        // Replace <a> links within the article with styling to match the end-of-page buttons
+        let $links = $(".project-detail-content p a");
+        $links.each(function (i) {
+            let $a = $(this);
+            let $link = $(`<ul class="button-list content-half-width"><li class="palette-tone1-border"><a class="palette-tone1-fg" href="${$a.attr('href')}">${$a.html()}</a></li></ul>`);
+            $a.replaceWith($link);
+        });
+
         // Constrain image size and maintain ratio.
         // Wrap each image with <a> for compatibility with SimpleLightbox
         const imgHeight = $(window).width() <= 600 ? 250 : 475;
@@ -40,8 +48,8 @@ class ProjectDetailView {
         // Setup slick carousel on each image block
         let $imageList = $(".project-detail-content blockquote p");
         $imageList.slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
+            slidesToShow: 3,
+            slidesToScroll: 3,
             dots: true,
         });
 
