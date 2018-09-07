@@ -17,9 +17,9 @@ body {
 }
 
 .content-width {
-  width: 950px;
+  width: 1300px;
   max-width: 1300px;
-  min-width: 950px;
+  min-width: 1300px;
 }
 
 .content-half-width {
@@ -321,15 +321,6 @@ span.case-study-title-wrapper {
   div {
     display: flex;
     flex-direction: row;
-
-/*    svg {
-      position: relative;
-      top: 50px;
-      left: calc(50% - 80px);
-      width: 120px;
-      height: 120px;
-    }*/
-
   }
 
   ul {
@@ -347,6 +338,27 @@ span.case-study-title-wrapper {
   }
 
 }
+
+span.case-study-title-wrapper  {
+  min-width: 650px;
+  width: 650px;
+  max-width: 650px;
+}
+@media screen and (max-width: $tabletBreakpoint) {
+  span.case-study-title-wrapper  {
+    min-width: 482px;
+    width: 482px;
+    max-width: 482px;
+  }
+}
+@media screen and (max-width: $mobileBreakpoint) {
+  span.case-study-title-wrapper  {
+    min-width: 300px;
+    width: 300px;
+    max-width: 300px;
+  }
+}
+
 
 span.case-study-title-wrapper div svg {
   position: relative;
@@ -401,19 +413,34 @@ span.case-study-title-wrapper div a {
 
 
 div.case-study-background {
+  min-width: 650px;
+  width: 650px;
+  max-width: 650px;
   svg {
     margin: 20px 0 0 72px;
   }
 }
-
-@media screen and (max-width: $mobileBreakpoint) {
+@media screen and (max-width: $tabletBreakpoint) {
   div.case-study-background {
-    display: none;
+    min-width: 226px;
+    width: 226px;
+    max-width: 226px;
+    overflow-x: hidden;
     svg {
       margin: 20px 0 0 72px;
     }
   }
-
+}
+@media screen and (max-width: $mobileBreakpoint) {
+  div.case-study-background {
+    min-width: 40px;
+    width: 40px;
+    max-width: 40px;
+    overflow-x: hidden;
+    svg {
+      margin: 20px 0 0 72px;
+    }
+  }
 }
 
 

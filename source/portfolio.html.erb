@@ -30,7 +30,7 @@ title: Portfolio
       <ul class="case-study-list">
         <% sub_pages('casestudy').each do |study| %>
           <li class="case-study-summary">
-            <span class="case-study-title-wrapper content-half-width palette-tone1-bg palette-white-fg">
+            <span class="case-study-title-wrapper palette-tone1-bg palette-white-fg">
               <div>
                 <%= link_to study.data.title, study.url %>
                 <!--          <span class="case-study-title"><%#= study.data.title %></span>-->
@@ -43,7 +43,7 @@ title: Portfolio
                 <% end %>
               </ul>
             </span>
-            <div class="case-study-background content-half-width palette-tone2-bg">
+            <div class="case-study-background palette-tone2-bg">
               <%= partial "casestudy_background" %>
             </div>
           </li>
