@@ -1,79 +1,138 @@
 
 const $ = require("jquery");
 
+const FPS = 60;
+const TRANSFORM_DURATION = 20;
+const SUNDIAL_WIDTH = 650;
+
 class SundialAnimation {
 
+    /***
+     *
+     */
     constructor() {
-        this.sundials = [];
-        this.sundialIndex = 0;
-        this.frameCount = 0;
-
         this.init();
+        this.activateSundial(0);
     }
 
+    /***
+     *
+     */
     init() {
-        let element = document.getElementById("sundial-wrapper");
-        if (element) {
-            for (let i = 0; i < element.childElementCount; i++) {
-                let sundial = element.children.item(i);
-                this.sundials.push(sundial);
+        let sundials = []
+        this.container =  document.getElementById("sundial-wrapper");
+        if (this.container) {
+            for (let i = 0; i < this.container.childElementCount; i++) {
+                let sundial = this.container.children.item(i);
+                sundials.push(sundial);
                 sundial.style.display = "none";
             }
         }
+        this.sundials = sundials.map((v, i) => {
+            return {
+                element: v,
+                active: false,
+                transforming: false,
+                left: 0
+            };
+        });
     }
 
+    /***
+     *
+     * @param t time as global frame count
+     */
     animate(t) {
-        let speed = 1;
-        if (window.innerWidth < 768) {
-            speed = 2;
+        for (let i = 0; i < this.sundials.length; i++) {
+            this.animateSundial(i);
         }
 
-        if (t % speed == 0 && this.sundials.length > 0) {
-            this.frameCount++;
+    }
 
-            let container = document.getElementById("sundial-wrapper");
-            let sundial = this.sundials[this.sundialIndex];
+    /***
+     *
+     * @param index
+     */
+    animateSundial(index) {
+        let sundial = this.sundials[index];
+        if (sundial.active) {
 
-            // console.log(window.innerWidth);
-            let x = container.clientWidth - (this.frameCount % (container.clientWidth));
-            // let x = container.clientWidth - (this.frameCount % (window.innerWidth));
-            // let diff = window.innerWidth - container.clientWidth;
+            let rect = this.container.getBoundingClientRect();
+            let windowWidth = $(window).width();
 
-            let xratio = x / container.clientWidth;
-            const opacityThreshold = 0.15;
-            /*if (xratio < opacityThreshold) {
-                sundial.style.opacity = (xratio / opacityThreshold);
-            } else {
-                sundial.style.opacity = 1.0;
-            }*/
+            let framesPerTransform = FPS * TRANSFORM_DURATION;
+            let d = windowWidth / framesPerTransform;
 
-            if (xratio < opacityThreshold) {
-                sundial.style.opacity = 0.0;
+            sundial.left = sundial.left- d;
+
+            sundial.element.style.display = "flex";
+            sundial.element.style.opacity = 1.0;
+            sundial.element.style.left = `${sundial.left}px`;
+
+            if (sundial.left < this.container.clientWidth) {
+                // We reached the right edge of the conten area
+                this.beginTransform(index);
             }
 
-            const transformThreshold = 0.85;
-            if (xratio > transformThreshold) {
-                $(sundial).find('animateTransform').each(function(i) {
-                    let tx = $(this).get(0);
-                    if (typeof tx.beginElement === "function") {
-                        tx.beginElement();
-                    }
-                });
-
+            if (sundial.left < 0) {
+                // We reached the left edge of the conten area
+                // Activate the next sundial
+                let nextIndex =  (index+1) % this.sundials.length;
+                this.activateSundial(nextIndex);
             }
 
-            if (x > 1) {
-                 sundial.style.display = "flex";
-                sundial.style.opacity = 1.0;
-                sundial.style.left = `${x}px`;
-            } else {
-                 // sundial.style.display = "none";
-                // sundial.style.opacity = 0.0;
-                this.sundialIndex = (this.sundialIndex + 1) % this.sundials.length;
+            if (sundial.left < ( -1 * rect.left ) - SUNDIAL_WIDTH) {
+                // We have traveled off screen
+                this.deactiveSundial(index);
             }
 
         }
+    }
 
+    /***
+     *
+     * @param index
+     */
+    beginTransform(index) {
+        let sundial = this.sundials[index];
+        if (sundial.active && !sundial.transforming) {
+            sundial.transforming = true;
+            $(sundial.element).find('animateTransform').each(function (i) {
+                let tx = $(this).get(0);
+                if (typeof tx.beginElement === "function") {
+                    tx.beginElement();
+                }
+            });
+        }
+    }
+
+    /***
+     *
+     * @param index
+     */
+    activateSundial(index) {
+        let sundial = this.sundials[index];
+        if (!sundial.active) {
+            sundial.active = true;
+
+            let windowWidth = $(window).width();
+            sundial.left = (windowWidth - this.container.clientWidth) / 2 + this.container.clientWidth;
+            sundial.element.style.display = "flex";
+            sundial.element.style.opacity = 1.0;
+            sundial.element.style.left = `${sundial.left}px`;
+        }
+    }
+
+    /***
+     *
+     * @param index
+     */
+    deactiveSundial(index) {
+        let sundial = this.sundials[index];
+        sundial.active = false;
+        sundial.transforming = false;
+        sundial.element.style.display = "flex";
+        sundial.element.style.opacity = 0.0;
     }
 
 }

@@ -126,7 +126,8 @@ div.sundial {
   transition: opacity 2s ease;
   opacity: 0.0;
   display: flex;
-  justify-content: flex-start;
+  //justify-content: flex-start;
+  justify-content: center;
   position: absolute;
 }
 
