@@ -1,9 +1,9 @@
 
 const $ = require("jquery");
 
-const FPS = 60;
-const TRANSFORM_DURATION = 20;
-const SUNDIAL_WIDTH = 650;
+const FPS = 60; // frames/seconds
+const TRANSFORM_DURATION = 20; // seconds
+const SUNDIAL_WIDTH = 650; // pixels
 
 class SundialAnimation {
 
@@ -19,7 +19,7 @@ class SundialAnimation {
      *
      */
     init() {
-        let sundials = []
+        let sundials = [];
         this.container =  document.getElementById("sundial-wrapper");
         if (this.container) {
             for (let i = 0; i < this.container.childElementCount; i++) {
@@ -81,7 +81,9 @@ class SundialAnimation {
                 this.activateSundial(nextIndex);
             }
 
-            if (sundial.left < ( -1 * rect.left ) - SUNDIAL_WIDTH) {
+
+
+            if (sundial.left < ( -1 * rect.left ) - sundial.element.clientWidth) {
                 // We have traveled off screen
                 this.deactiveSundial(index);
             }
