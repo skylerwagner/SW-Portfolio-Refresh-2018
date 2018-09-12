@@ -3,7 +3,6 @@ const $ = require("jquery");
 
 const FPS = 60; // frames/seconds
 const TRANSFORM_DURATION = 20; // seconds
-const SUNDIAL_WIDTH = 650; // pixels
 
 class SundialAnimation {
 
@@ -12,7 +11,9 @@ class SundialAnimation {
      */
     constructor() {
         this.init();
-        this.activateSundial(0);
+        if (this.sundials.length) {
+            this.activateSundial(0);
+        }
     }
 
     /***
@@ -55,7 +56,7 @@ class SundialAnimation {
      */
     animateSundial(index) {
         let sundial = this.sundials[index];
-        if (sundial.active) {
+        if (sundial && sundial.active) {
 
             let rect = this.container.getBoundingClientRect();
             let windowWidth = $(window).width();
@@ -114,7 +115,7 @@ class SundialAnimation {
      */
     activateSundial(index) {
         let sundial = this.sundials[index];
-        if (!sundial.active) {
+        if (sundial && !sundial.active) {
             sundial.active = true;
 
             let windowWidth = $(window).width();
@@ -131,10 +132,12 @@ class SundialAnimation {
      */
     deactiveSundial(index) {
         let sundial = this.sundials[index];
-        sundial.active = false;
-        sundial.transforming = false;
-        sundial.element.style.display = "flex";
-        sundial.element.style.opacity = 0.0;
+        if (sundial) {
+            sundial.active = false;
+            sundial.transforming = false;
+            sundial.element.style.display = "flex";
+            sundial.element.style.opacity = 0.0;
+        }
     }
 
 }
