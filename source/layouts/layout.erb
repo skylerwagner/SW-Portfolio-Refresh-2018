@@ -1,55 +1,57 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    	<meta name="viewport"
+    		  content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-    <!-- TODO serve font locally -->
+    	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+    	<!-- TODO serve font locally -->
 
-    <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= current_page.data.title << " ↫ Skyler Wagner" || "Skyler Wagner" %></title>
-		<%= stylesheet_link_tag "site" %>
-		<%= stylesheet_link_tag "color-theme" %>
-		<%= stylesheet_link_tag "fonts" %>
-		<%#= stylesheet_link_tag "material-design-animation" %>
+    	<!-- Use the title from a page's frontmatter if it has one -->
+    	<title><%= current_page.data.title << " ↫ Skyler Wagner" || "Skyler Wagner" %></title>
+    	<%= stylesheet_link_tag "site" %>
+    	<%= stylesheet_link_tag "color-theme" %>
+    	<%= stylesheet_link_tag "fonts" %>
+    	<%#= stylesheet_link_tag "material-design-animation" %>
 
-		<%= javascript_include_tag "bundle" %>
+    	<%= javascript_include_tag "bundle" %>
 
-		<%#= javascript_include_tag "site" %>
-		<%#= javascript_include_tag "drag_indicator_animation" %>
-		<%#= javascript_include_tag "color_theme_manager" %>
-		<%#= javascript_include_tag "sundial_animation" %>
+    	<%#= javascript_include_tag "site" %>
+    	<%#= javascript_include_tag "drag_indicator_animation" %>
+    	<%#= javascript_include_tag "color_theme_manager" %>
+    	<%#= javascript_include_tag "sundial_animation" %>
 
-  </head>
-  <body class="palette-white-bg site-width">
-	  <section id="primary-header" class="section-break-margin section-grey palette-tone2-bg">
-			<div id="explain-wrapper" >
-				<!-- <a id="explain-link" class="animation-hint-text-onsolid palette-static-fg" href="#explain">Explain, please?</a> -->
-				<div class="animation-hint-text">
-					<%= partial "explainplease" %>
-				</div>
-			</div>
-			<div id="sundial-wrapper" class="content-width">
-				<%= partial "sundial" %>
-      </div>
-      <div id="intro-text-wrapper" class="intro-text-wrapper content-width">
-        <span class="intro-text fonts-intro-text palette-white-fg palette-tone1-bg">Skyler Wagner is a UX and UI Designer, Creative Director, & a collection of shapes.</span>
-      </div>
-      <div class="drag-indicator-container content-width">
-        <div class="content-half-width">
-          <%#= partial "drag_indicator" %>
+    </head>
+    <body class="palette-white-bg site-width">
+        <section id="primary-header" class="section-break-margin section-grey palette-tone2-bg">
+        	<div id="explain-wrapper" >
+        		<!-- <a id="explain-link" class="animation-hint-text-onsolid palette-static-fg" href="#explain">Explain, please?</a> -->
+        		<div class="animation-hint-text">
+        			<%= partial "explainplease" %>
+        		</div>
+        	</div>
+        	<div id="sundial-wrapper" class="content-width">
+        		<%= partial "sundial" %>
+        	</div>
+        	<div class="content-width">
+        		<div id="intro-text-wrapper" class="intro-text-wrapper">
+        			<span class="intro-text fonts-intro-text palette-white-fg palette-tone1-bg">Skyler Wagner is a UX and UI Designer, Creative Director, & a collection of shapes.</span>
+        		</div>
+        	</div>
+        	<div class="drag-indicator-container content-width">
+        		<div class="content-half-width">
+        			<%#= partial "drag_indicator" %>
+        		</div>
+        	</div>
+        </section>
+        <section class="section-separator palette-tone2-bg"></section>
+        <%= yield %>
+        <div class="palette-tone2-bg">
+        	<div class="section-break-margin skylermadethis-wrapper palette-white-bg">
+        		<a class="skylermadethis  palette-static-fg" href="#skylermadethis">#Skylermadethis </a>
+        	</div>
         </div>
-      </div>
-	  </section>
-		<section class="section-separator palette-tone2-bg"></section>
-		<%= yield %>
-		<div class="palette-tone2-bg">
-			<div class="section-break-margin skylermadethis-wrapper palette-white-bg">
-				<a class="skylermadethis  palette-static-fg" href="#skylermadethis">#Skylermadethis </a>
-			</div>
-		</div>
-  </body>
+    </body>
 </html>
