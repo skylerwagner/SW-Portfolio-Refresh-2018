@@ -45,8 +45,13 @@ const ColorThemes = [
 
 ];
 
+const TRANSITION_DURATION = 2; // seconds
+
 class ColorThemeManager {
 
+    /***
+     *
+     */
     constructor() {
         this.colorThemeIndex = 0;
 
@@ -54,48 +59,76 @@ class ColorThemeManager {
             let index = window.localStorage.getItem("colorThemeIndex");
             if (index > 0) {
                 this.colorThemeIndex = index;
-                ColorThemeManager.setColorTheme(index);
+                ColorThemeManager.setColorTheme(index, 0);
             }
         }
     }
 
+    /***
+     *
+     * @param t
+     */
     animate(t) {
         const fps = 60;
         const interval = 15; //seconds
 
         if (t % (fps * interval) == 0) {
             this.colorThemeIndex = (this.colorThemeIndex + 1) % ColorThemes.length;
-            ColorThemeManager.setColorTheme(this.colorThemeIndex);
+            ColorThemeManager.setColorTheme(this.colorThemeIndex, TRANSITION_DURATION);
             if (window.localStorage) {
                 window.localStorage.setItem("colorThemeIndex", this.colorThemeIndex);
             }
         }
     }
 
-    static setColorTheme(index) {
+    /***
+     *
+     * @param index
+     * @param transitionDuration
+     */
+    static setColorTheme(index, transitionDuration) {
         let theme = ColorThemes[index];
-        ColorThemeManager.setAllColorProperties(theme, "tone1");
-        ColorThemeManager.setAllColorProperties(theme, "tone2");
-        ColorThemeManager.setAllColorProperties(theme, "highlight");
-        ColorThemeManager.setAllColorProperties(theme, "black");
-        ColorThemeManager.setAllColorProperties(theme, "white");
+        ColorThemeManager.setAllColorProperties(theme, "tone1", transitionDuration);
+        ColorThemeManager.setAllColorProperties(theme, "tone2", transitionDuration);
+        ColorThemeManager.setAllColorProperties(theme, "highlight", transitionDuration);
+        ColorThemeManager.setAllColorProperties(theme, "black", transitionDuration);
+        ColorThemeManager.setAllColorProperties(theme, "white", transitionDuration);
 
     }
 
-
-    static setAllColorProperties(theme, name) {
+    /***
+     *
+     * @param theme
+     * @param name
+     * @param transitionDuration
+     */
+    static setAllColorProperties(theme, name, transitionDuration) {
         let color = theme[name];
-        ColorThemeManager.setColorProperty("palette-" + name + "-bg", "backgroundColor", color);
-        ColorThemeManager.setColorProperty("palette-" + name + "-fg", "color", color);
-        ColorThemeManager.setColorProperty("palette-" + name + "-border", "borderColor", color);
-        ColorThemeManager.setColorProperty("palette-" + name + "-fill", "fill", color);
-        ColorThemeManager.setColorProperty("palette-" + name + "-stroke", "stroke", color);
+        ColorThemeManager.setColorProperty("palette-" + name + "-bg", "backgroundColor", color, transitionDuration);
+        ColorThemeManager.setColorProperty("palette-" + name + "-fg", "color", color, transitionDuration);
+        ColorThemeManager.setColorProperty("palette-" + name + "-border", "borderColor", color, transitionDuration);
+        ColorThemeManager.setColorProperty("palette-" + name + "-fill", "fill", color, transitionDuration);
+        ColorThemeManager.setColorProperty("palette-" + name + "-stroke", "stroke", color, transitionDuration);
     }
 
-    static setColorProperty(className, property, color) {
+    /***
+     *
+     * @param className
+     * @param property
+     * @param color
+     * @param transitionDuration
+     */
+    static setColorProperty(className, property, color, transitionDuration) {
         let elements = document.getElementsByClassName(className);
+        if (!transitionDuration) {
+            transitionDuration = 0;
+        }
+
         for (let i = 0; i < elements.length; i++) {
             let element = elements[i];
+
+            element.style.transitionDuration = `${transitionDuration}s`;
+
             if (property === "color") {
                 element.style.color = color;
             } else if (property === "backgroundColor") {
