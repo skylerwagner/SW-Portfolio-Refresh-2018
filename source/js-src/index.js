@@ -4,15 +4,15 @@ const PortfolioView = require("./portfolio-view");
 const SiteView = require("./site-view");
 
 window.onload = () => {
-    let site = new SiteView();
+    const site = new SiteView();
     site.render();
 
-    let portfolio = new PortfolioView();
+    const portfolio = new PortfolioView();
     portfolio.render();
 
-    let projectDetail = new ProjectDetailRenderer();
+    const projectDetail = new ProjectDetailRenderer();
     projectDetail.render();
 
-    let animationManager = new AnimationManager();
+    const animationManager = new AnimationManager();
     animationManager.animate();
 };

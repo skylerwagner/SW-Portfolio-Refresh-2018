@@ -106,8 +106,14 @@ section#project-detail {
   }
 }
 
-a.project-detail-image-wrapper {
+.project-detail-image-wrapper {
   padding: 20px;
+  max-width: 225px;
+  height: 325px;
+  //border: 1px solid olive;
+  display: flex;
+  //justify-content: center;
+  align-items: center;
 }
 
 div.project-close-btn-wrapper {
