@@ -18,9 +18,10 @@
   "homepage": "https://github.com/skylerwagner/SW-Portfolio-Refresh-2018#readme",
   "dependencies": {
     "jquery": "^3.3.1",
-    "simplelightbox": "^1.13.0",
+    "ls": "^0.2.1",
+    "simplelightbox": "^1.15.0",
     "slick-carousel": "^1.8.1",
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
   }
 }
