@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/skylerwagner/SW-Portfolio-Refresh-2018#readme",
   "dependencies": {
+    "constants-browserify": "^1.0.0",
     "jquery": "^3.3.1",
     "ls": "^0.2.1",
     "simplelightbox": "^1.15.0",
